@@ -32,6 +32,25 @@ This project implements a high-performance parallel approximation of π using th
 - SLURM job scripts: `job-pi2-01.slurm`, etc.
 - `report.txt`: Final project report with results and analysis
 
+##folder Structure
+```
+parallel-pi-mpi-hpc/
+├── src/
+│   ├── pi1.cpp
+│   ├── pi2.cpp
+│   ├── pi3.cpp
+│   └── pi4.cpp
+├── jobs/
+│   ├── job-pi2-01.slurm
+│   ├── job-pi2-12.slurm
+│   ├── job-pi2-24.slurm
+│   └── job-pi2-48.slurm
+├── results/
+│   └── timing-analysis.csv    ← (optional)
+├── report.txt
+├── README.md
+└── LICENSE
+```
 ## 📘 What I Learned
 - Writing MPI programs in C++
 - Measuring parallel performance and speedup
