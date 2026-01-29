@@ -1,3 +1,7 @@
+![Language](https://img.shields.io/badge/C++-MPI-orange)
+![Platform](https://img.shields.io/badge/Tested-on%20Bridges2-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/project-complete-brightgreen)
 # Parallel Pi Approximation with MPI 🧠💻
 
 This project implements a high-performance parallel approximation of π using the midpoint rule and MPI. It was benchmarked on the Bridges2 supercomputer using SLURM with 1, 12, 24, and 48 cores.
