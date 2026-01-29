@@ -36,7 +36,7 @@ This project implements a high-performance parallel approximation of π using th
 
 ## 📌 Author
 **Jesús Gil**  
-M.S. Computer Science (in progress)  
+M.S. Computer Science  
 [LinkedIn](https://www.linkedin.com/in/jesusgil) • [GitHub](https://github.com/jeragilo)
 
 
