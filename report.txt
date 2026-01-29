@@ -1,0 +1,52 @@
+Name: Jesus Gil
+Date: June 20, 2025
+Assignment: Homework 4 – Parallel Pi Approximation Using MPI
+
+---------------------------------------------
+1. Objective:
+---------------------------------------------
+The goal of this assignment was to approximate the value of Pi using numerical integration and to parallelize the computation using MPI across multiple processes. We tested performance across 1, 12, 24, and 48 MPI ranks.
+
+---------------------------------------------
+2. Method:
+---------------------------------------------
+We used the midpoint rectangle rule to approximate the integral of 4 / (1 + x^2) from 0 to 1. The domain was divided among available MPI processes by chunking the loop iterations. Each process computed its local sum, and the results were reduced with `MPI_Reduce()` to rank 0. 
+
+The timing was measured using `MPI_Wtime()` from just before the local computation began until after the reduction.
+
+---------------------------------------------
+3. Results:
+---------------------------------------------
+
+(All runs use 1e9 steps)
+
+- 1 process:
+  Time ≈ 3.50s  
+  Pi ≈ 3.1415926535904264
+
+- 12 processes:
+  Time ≈ 0.345s  
+  Pi ≈ 3.1415926535904264
+
+- 24 processes:
+  Time ≈ 0.346s  
+  Pi ≈ 3.1415926535904264
+
+- 48 processes:
+  Time ≈ 0.345s  
+  Pi ≈ 3.1415926535904264
+
+---------------------------------------------
+4. Analysis:
+---------------------------------------------
+Speedup from parallelization is significant when going from 1 to many processes, with nearly 10×–12× speedup by 12 processes. However, beyond 12 processes, the performance gains plateau, indicating saturation due to communication overhead and diminishing returns from further dividing the workload.
+
+All process counts gave a highly accurate approximation of Pi (to ~15+ decimal places), showing that the method is both efficient and reliable.
+
+---------------------------------------------
+5. Conclusion:
+---------------------------------------------
+This assignment demonstrates how MPI enables parallel processing of independent tasks like numerical integration. Performance scales well initially but levels off at higher ranks due to overhead. This highlights the importance of balancing workload distribution and minimizing inter-process communication.
+
+---------------------------------------------
+
